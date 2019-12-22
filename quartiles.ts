@@ -10,7 +10,7 @@ export default function quartiles(input: string): string {
       ? (values[Math.floor(mlen - 1)] + values[Math.floor(mlen)]) / 2
       : values[Math.floor(mlen)];
   let lowerQt =
-    len % 4 === 0 || (len - 1) % 2 === 0
+    len % 4 === 0 || (len - 1) % 4 === 0
       ? (values[Math.floor(slen - 1)] + values[Math.floor(slen)]) / 2
       : values[Math.floor(slen)];
   let upperQt =

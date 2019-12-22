@@ -8,16 +8,15 @@ export default function interQuartileRange(input: string) {
       len = exValues.length;
       const [slen, blen] = [len * (1 / 4), len * (3 / 4)];
   const lowerQt =
-      len % 4 === 0 || (len - 1) % 2 === 0
+      len % 4 === 0 || (len - 1) % 4 === 0
         ? (exValues[Math.floor(slen - 1)] + exValues[Math.floor(slen)]) / 2
         : exValues[Math.floor(slen)];
   const upperQt =
-      len % 4 === 0 || (len - 1) % 2 === 0
+      len % 4 === 0 || (len - 1) % 4 === 0
         ? (exValues[Math.round(blen - 1)] + exValues[Math.round(blen)]) / 2
         : exValues[Math.floor(blen)];
-  return `${lowerQt}\n${upperQt}`;
+  return Number(upperQt - lowerQt).toFixed(1);
 }
-
-interQuartileRange(`6
-6 12 8 10 20 16
-5 4 3 2 1 5`);
+console.log(interQuartileRange(`5
+10 40 30 50 20
+1 2 3 4 5`))
