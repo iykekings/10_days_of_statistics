@@ -1,3 +1,5 @@
+![](https://github.com/iykekings/10_days_of_statistics/workflows/Test/badge.svg)
+
 ## 10 days of statistics on hackerrank solutions
 
 > To test each solution (Note you need [deno](https://deno.land) to run this commands)
