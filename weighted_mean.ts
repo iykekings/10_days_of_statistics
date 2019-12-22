@@ -1,6 +1,4 @@
-import { assertEq } from "./deno_test.ts";
-
-function processData(input: string) {
+export default function weightedMean(input: string) {
   const [_len, values, freq] = input.split("\n").map(val =>
     val.trim().length > 1
       ? val
@@ -13,10 +11,3 @@ function processData(input: string) {
   (freq as number[]).reduce((a, b) => a + b, 0)
   return Number(res.toFixed(1));
 }
-
-assertEq(
-  processData(`5
-  10 40 30 50 20
-  1 2 3 4 5`),
-  32.0
-);

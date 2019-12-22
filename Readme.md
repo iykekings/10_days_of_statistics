@@ -4,7 +4,13 @@
 
 
   ```sh
-    deno run <filename.ts>
+    deno test <filename.ts> -A
+  ```
+> To test all solutions
+
+
+  ```sh
+    deno test -A
   ```
 
 > To format single file
