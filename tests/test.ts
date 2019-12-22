@@ -1,7 +1,7 @@
   
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { weightedMean, standardDeviation, meanMedianMode } from "../mod.ts";
+import { weightedMean, standardDeviation, meanMedianMode, quartiles, interQuartileRange } from "../mod.ts";
 
 test("weighted mean", () => {
   assertEquals(weightedMean(`5
@@ -17,4 +17,22 @@ test("standard deviation", () => {
 
 test("mean median mode", () => {
   assertEquals(meanMedianMode("10\n64630 11735 14216 99233 14470 4978 73429 38120 51135 67060"), "43900.6\n44627.5\n4978")
+})
+
+test("Quartiles work", () => { assertEquals(
+  quartiles(`9
+3 7 8 5 12 14 21 13 18`),
+  "6\n12\n16")
+});
+
+test("Quartiles work 2", () => { assertEquals(
+  quartiles(`12
+  4 17 7 14 18 12 3 16 10 4 4 12`),
+  "4\n11\n15")
+});
+
+test("Inter quartile", () => {
+  interQuartileRange(`6
+6 12 8 10 20 16
+5 4 3 2 1 5`), "7\n16"
 })
