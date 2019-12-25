@@ -1,6 +1,4 @@
-  
-import { test } from "https://deno.land/std/testing/mod.ts";
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import {test, assertEquals} from '../mod.ts';
 import { weightedMean, standardDeviation, meanMedianMode, quartiles, interQuartileRange } from "../mod.ts";
 
 test("weighted mean", () => {

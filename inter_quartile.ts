@@ -17,6 +17,3 @@ export default function interQuartileRange(input: string) {
         : exValues[Math.floor(blen)];
   return Number(upperQt - lowerQt).toFixed(1);
 }
-console.log(interQuartileRange(`5
-10 40 30 50 20
-1 2 3 4 5`))
